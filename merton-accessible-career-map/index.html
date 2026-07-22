@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Merton Accessible Career & Welcome Map</title>
+  <meta name="description" content="Resident-led demo: accessible local map and career welcome assistant for Merton, Mitcham, Merton Vision, TPT Works For Me and Employ Merton." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQdVkCkCkCk5zBYS9v5qUXQkZ5fT4=" crossorigin="" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">Resident-led civic-tech prototype</p>
+      <h1>Merton Accessible Career & Welcome Map</h1>
+      <p class="hero__text">
+        A small demo showing how new residents, jobseekers and blind or partially sighted people in Merton could find work support, digital help and local services faster.
+      </p>
+      <div class="hero__actions" aria-label="Main actions">
+        <a href="#assistant" class="button button--primary">Try assistant demo</a>
+        <a href="#map" class="button">Open support map</a>
+        <a href="#outreach" class="button">Who to contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="notice" aria-label="Demo notice">
+      <strong>Important:</strong> This is not an official service from Merton Council, Merton Vision or Thomas Pocklington Trust. It is a demo idea created to start a conversation about digital support, accessibility and employment.
+    </section>
+
+    <section class="grid section" id="organisations">
+      <article class="card">
+        <h2>Merton Vision</h2>
+        <p>Local charity supporting blind and partially sighted people in Merton with independence, IT, community activities and employment preparation.</p>
+        <a href="https://mertonvision.org.uk/" target="_blank" rel="noreferrer">Visit Merton Vision</a>
+      </article>
+      <article class="card">
+        <h2>TPT Works For Me</h2>
+        <p>Employment programme from Thomas Pocklington Trust for blind and partially sighted people seeking paid work or a career change.</p>
+        <a href="https://www.pocklington.org.uk/employment/works-for-me-employment-programme/" target="_blank" rel="noreferrer">Visit Works For Me</a>
+      </article>
+      <article class="card">
+        <h2>Employ Merton</h2>
+        <p>Merton Council employment and recruitment service helping residents find work, training and local opportunities.</p>
+        <a href="https://www.merton.gov.uk/employ-merton" target="_blank" rel="noreferrer">Visit Employ Merton</a>
+      </article>
+    </section>
+
+    <section class="section" id="assistant">
+      <div class="section__header">
+        <p class="eyebrow">AI-style navigation demo</p>
+        <h2>What do you need today?</h2>
+        <p>Choose a situation. The prototype gives a simple pathway and official signposts.</p>
+      </div>
+      <div class="assistant-buttons" role="group" aria-label="Assistant demo options">
+        <button data-path="newResident">I am new in Merton</button>
+        <button data-path="work">I need work</button>
+        <button data-path="vision">I need accessible support</button>
+        <button data-path="digital">I need digital / AI help</button>
+      </div>
+      <div id="assistant-output" class="assistant-output" aria-live="polite">
+        <h3>Start here</h3>
+        <p>Select one button above to see the route. This is a prototype: it does not collect personal data.</p>
+      </div>
+    </section>
+
+    <section class="section split" id="map">
+      <div>
+        <p class="eyebrow">Local support map</p>
+        <h2>Mitcham / Merton support points</h2>
+        <p>
+          Prototype map with useful organisations and services. Some markers are approximate and must be checked before official use.
+        </p>
+        <div class="filter-row" aria-label="Map filters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="employment">Employment</button>
+          <button class="filter" data-filter="accessibility">Accessibility</button>
+          <button class="filter" data-filter="library">Libraries</button>
+          <button class="filter" data-filter="council">Council</button>
+        </div>
+      </div>
+      <div id="mapCanvas" class="map" role="application" aria-label="Map of local support points in Merton"></div>
+    </section>
+
+    <section class="section" id="pilot">
+      <div class="section__header">
+        <p class="eyebrow">Small pilot proposal</p>
+        <h2>What could be built first?</h2>
+      </div>
+      <div class="steps">
+        <div><span>1</span><p>Accessible map of local support, job help and community services.</p></div>
+        <div><span>2</span><p>New-resident checklist: GP, NINO, right to work, library, job support.</p></div>
+        <div><span>3</span><p>Job-search assistant: CV, cover letter, interview and reasonable adjustments.</p></div>
+        <div><span>4</span><p>Digital / AI workshops for residents and community organisations.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="outreach">
+      <div class="section__header">
+        <p class="eyebrow">Outreach targets</p>
+        <h2>Who could receive the demo?</h2>
+      </div>
+      <div class="contact-list">
+        <article>
+          <h3>Merton Vision</h3>
+          <p>Email: <a href="mailto:info@mertonvision.org.uk">info@mertonvision.org.uk</a></p>
+          <p>Volunteering: <a href="mailto:volunteering@mertonvision.org.uk">volunteering@mertonvision.org.uk</a></p>
+        </article>
+        <article>
+          <h3>Thomas Pocklington Trust</h3>
+          <p>Employment: <a href="mailto:employment@pocklington.org.uk">employment@pocklington.org.uk</a></p>
+        </article>
+        <article>
+          <h3>Employ Merton</h3>
+          <p>Email: <a href="mailto:employmerton@merton.gov.uk">employmerton@merton.gov.uk</a></p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Created as a small resident-led prototype by Mykola Shcheglov / jobkubera-lab.</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+</html>
